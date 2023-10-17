@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>ServletJsp</display-name>
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/hello.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- config servlet by xml 
+	<servlet> 
+		<servlet-name>hello</servlet-name> 
+		<servlet-class>com.one.DemoServlet</servlet-class>
+			<init-param> <param-name>name</param-name> 
+			<param-value>servletconfig</param-value> </init-param>
+		<load-on-startup>1</load-on-startup> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>hello</servlet-name> 
+		<url-pattern>/hello</url-pattern> 
+	</servlet-mapping> 
+	-->
+	
+	<!-- 
+	config filter by xml
+	filter use to filter request and respone
+		<filter>
+		<filter-name>Logger</filter-name>
+		<filter-class>com.servletfilter.Logger</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Logger</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	 -->
+	
+	<!-- 
+	<context-param>
+		<param-name>jdbc</param-name>
+		<param-value>mysql</param-value>
+	</context-param>
+	 -->
+	 
+	 <!-- any error go tin to location to handle
+	 	error-code can be any code as 404, 500, 501, 505 and exception or custom exception -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/handle-error</location>
+	</error-page>
+
+</web-app>

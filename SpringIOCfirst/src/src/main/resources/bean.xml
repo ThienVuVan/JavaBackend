@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:context="http://www.springframework.org/schema/context 	
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="ad1" class="beans.Address">
+		<property name="addressId" value="1"></property>
+		<property name="addressName" value="bachlien"></property>
+	</bean>
+	<bean id="loan" class="beans.loanAccount">
+	</bean>
+	<bean id="saving" class="beans.savingAccount">
+	</bean>
+	<bean id="em1" class="beans.Employee">
+		<property name="empId" value="1"></property>
+		<property name="empName" value="thien"></property>
+		<property name="account" value="#{loan}"></property>
+		<constructor-arg name="address" value="#{ad1}"></constructor-arg>
+	</bean>
+	<bean id="em2" class="beans.Employee">
+		<property name="empId" value="2"></property>
+		<property name="empName" value="hieu"></property>
+		<property name="account" ref="saving"></property>
+		<constructor-arg name="address" ref="ad1"></constructor-arg>
+	</bean>
+</beans>

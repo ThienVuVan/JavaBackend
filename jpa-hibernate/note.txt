@@ -1,0 +1,5 @@
+insert into course values(1,'php','thien');
+
+select * from course;
+
+delete from course where id=1;
